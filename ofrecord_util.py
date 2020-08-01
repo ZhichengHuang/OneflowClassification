@@ -89,7 +89,7 @@ def load_imagenet_for_training(args):
                                         batch_size=train_batch_size,
                                         data_part_num=args.train_data_part_num,
                                         part_name_prefix="train-",
-                                        part_name_suffix_length=6,
+                                        part_name_suffix_length=5,
                                         random_shuffle=True,
                                         shuffle_after_epoch=True)
     image = flow.data.OFRecordImageDecoderRandomCrop(ofrecord, "encoded",  # seed=seed,
@@ -114,7 +114,7 @@ def load_imagenet_for_validation(args):
                                             batch_size=val_batch_size,
                                             data_part_num=args.val_data_part_num,
                                             part_name_prefix="val-",
-                                            part_name_suffix_length=4,
+                                            part_name_suffix_length=5,
                                             shuffle_after_epoch=False)
     image = flow.data.OFRecordImageDecoder(
         ofrecord, "encoded", color_space=color_space)
