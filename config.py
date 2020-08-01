@@ -52,7 +52,7 @@ def get_parser(parser=None):
     parser.add_argument("--gpu_num_per_node", type=int, default=1)
     parser.add_argument('--num_nodes', type=int, default=1,
                         help='node/machine number for training')
-    parser.add_argument('--node_ips', type=str_list, default=['192.168.1.13', '192.168.1.14'],
+    parser.add_argument('--node_ips', type=str_list, default=['127.0.0.1', ],
                         help='nodes ip list for training, devided by ",", length >= num_nodes')
 
     parser.add_argument("--model", type=str, default="resnet50",
