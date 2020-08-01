@@ -117,7 +117,6 @@ def get_parser(parser=None):
         help="print loss every n iteration",
     )
     add_ofrecord_args(parser)
-    add_optimizer_args(parser)
     return parser
 
 

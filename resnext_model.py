@@ -43,8 +43,7 @@ def conv3x3(in_tensor, filters, strides=1, groups=1, trainable=True, name=""):
                     padding=([0, 0], [0, 0], [1, 1], [1, 1]), groups=groups, use_bias=False,
                     trainable=trainable, name=name)
 
-def _batch_norm(
-    inputs, trainable=True, training=True, name=None):
+def _batch_norm(inputs, trainable=True, training=True, name=None):
     return flow.layers.batch_normalization(
         inputs=inputs,
         axis=1,
