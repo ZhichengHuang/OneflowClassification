@@ -99,3 +99,5 @@ def main():
                 InferenceNet().async_get(metric.metric_cb(epoch, i))
 
         snapshot.save('epoch_{}'.format(epoch))
+if __name__ == "__main__":
+    main()
