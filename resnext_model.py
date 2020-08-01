@@ -26,16 +26,16 @@ def _conv2d(
             padding = "VALID"
         else:
             raise ValueError("padding must be SAME， VALID or a list/tuple.")
-        return flow.layers.conv2d(
-            inputs, filters, kernel_size, strides, padding,
-            data_format="NCHW", dilation_rate=1, groups=groups,
-            activation=None, use_bias=use_bias,
-            kernel_initializer=flow.random_normal_initializer(),
-            bias_initializer=flow.zeros_initializer(),
-            kernel_regularizer=None, bias_regularizer=None,
-            trainable=trainable, name=name, weight_name=name + "-weight",
-            bias_name=name + "-bias"
-        )
+    return flow.layers.conv2d(
+        inputs, filters, kernel_size, strides, padding,
+        data_format="NCHW", dilation_rate=1, groups=groups,
+        activation=None, use_bias=use_bias,
+        kernel_initializer=flow.random_normal_initializer(),
+        bias_initializer=flow.zeros_initializer(),
+        kernel_regularizer=None, bias_regularizer=None,
+        trainable=trainable, name=name, weight_name=name + "-weight",
+        bias_name=name + "-bias"
+    )
 
 
 def conv3x3(in_tensor, filters, strides=1, groups=1, trainable=True, name=""):
