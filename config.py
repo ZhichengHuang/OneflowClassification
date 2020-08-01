@@ -21,7 +21,6 @@ import argparse
 from datetime import datetime
 
 
-from optimizer_util import add_optimizer_args
 from ofrecord_util import add_ofrecord_args
 
 
