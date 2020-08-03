@@ -12,4 +12,5 @@ python3 of_cnn_train_val.py \
     --batch_size_per_device=32 \
     --val_batch_size_per_device=32 \
     --num_epoch=100 \
-    --model="resnext50"
+    --model="resnext50" \
+    --node_ips=${'AZ_BATCH_MASTER_NODE'},
