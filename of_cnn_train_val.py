@@ -56,7 +56,7 @@ def TrainNet():
 
     lr_scheduler = oneflow.optimizer.PiecewiseConstantScheduler([], [0.1])
     oneflow.optimizer.SGD(lr_scheduler, momentum=0.9).minimize(loss)
-    oneflow.losses.add_loss(loss)
+    # oneflow.losses.add_loss(loss)
     predictions = oneflow.nn.softmax(logits)
     outputs = {"loss": loss, "predictions": predictions, "labels": labels}
     return outputs
