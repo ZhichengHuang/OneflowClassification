@@ -49,7 +49,7 @@ def get_parser(parser=None):
                         default='float32', help="float16 float32")
 
     # resouce
-    parser.add_argument("--gpu_num_per_node", type=int, default=1)
+    parser.add_argument("--gpu_num_per_node", type=int, default=8)
     parser.add_argument('--num_nodes', type=int, default=1,
                         help='node/machine number for training')
     parser.add_argument('--node_ips', type=str_list, default=['127.0.0.1', ],
@@ -61,7 +61,7 @@ def get_parser(parser=None):
         '--use_fp16',
         type=str2bool,
         nargs='?',
-        const=True,
+        const=False,
         help='Whether to use use fp16'
     )
     parser.add_argument(
