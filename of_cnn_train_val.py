@@ -54,6 +54,8 @@ def TrainNet():
     else:
         loss = oneflow.nn.sparse_softmax_cross_entropy_with_logits(labels, logits, name="softmax_loss")
 
+    lr_scheduler = oneflow.optimizer.PiecewiseConstantScheduler([], [0.1])
+    oneflow.optimizer.SGD(lr_scheduler, momentum=0.9).minimize(loss)
     oneflow.losses.add_loss(loss)
     predictions = oneflow.nn.softmax(logits)
     outputs = {"loss": loss, "predictions": predictions, "labels": labels}
