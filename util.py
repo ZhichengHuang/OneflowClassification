@@ -12,12 +12,12 @@ import oneflow as flow
 def InitNodes(args):
     if args.num_nodes > 1:
         assert args.num_nodes <= len(args.node_ips)
-        flow.env.ctrl_port(12138)
-        nodes = []
-        for ip in args.node_ips:
-            addr_dict = {}
-            addr_dict["addr"] = ip
-            nodes.append(addr_dict)
+        flow.env.ctrl_port(52138)
+        nodes = [os.environ.get("AZ_BATCH_MASTER_NODE",'127.0.0.1')]
+        # for ip in args.node_ips:
+        #     addr_dict = {}
+        #     addr_dict["addr"] = ip
+        #     nodes.append(addr_dict)
 
         flow.env.machine(nodes)
 class Snapshot(object):
